@@ -1,0 +1,46 @@
+#include<iostream>
+#include<string.h>
+using namespace std;
+class employee
+{
+   protected:
+      int salary,hours;
+      string desig;
+   public:
+      void input()
+      {
+         cout<<"enter your designation: ";
+         cin>>desig;
+         cout<<"enter hours worked: ";
+         cin>>hours;
+      }
+};
+class emp:public employee
+{
+   public:
+   void display()
+   {
+      if(desig=="manager")
+      {
+         cout<<"Permenent employee(manager) salary: 50000"<<endl;
+      }
+      else
+      {
+         cout<<"Permanent employee(developer) salary: 40000"<<endl;
+      }
+   }
+   void hourcalc()
+   {
+      double one=15.5;
+      int daily=one*hours;
+      cout<<"Daily-wages employee salary(hours worked:"<<hours<<"):"<<daily<<endl;
+   }
+};
+int main()
+{
+   emp e1;
+   e1.input();
+   e1.display();
+   e1.hourcalc();
+   return 0;
+}
